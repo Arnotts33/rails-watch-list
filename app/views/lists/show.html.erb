@@ -1,15 +1,38 @@
-<h1><%= @list.name  %></h1>
+<div class="navbar navbar-expand-sm">
+
+</div>
+
+<div class="banner">
+  <div class="banner-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'popcorn.jpg' %>)">
+  <h1><%= @list.name  %></h1>
+</div>
 <br>
-<% @list.movies.each do |movie| %>
-  <img src="<%= movie.poster_url %>" alt="<%= movie.title %>">
-  <p><%= movie.title %></p>
-  <p><%= movie.rating %></p>
-  <p><%= movie.overview %></p>
-  <% movie.bookmarks.each do |bookmark| %>
-    <p><%= bookmark.comment  %></p>
-    <%= link_to 'Delete', bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
+<div class="container">
+  <% @list.movies.each do |movie| %>
+    <div class="card-trip">
+      <img src="<%= movie.poster_url %>" alt="<%= movie.title %>">
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= movie.title %></h2>
+          <p><%= movie.rating %></p>
+          <p><%= movie.overview %></p>
+        </div>
+        <div>
+          <% movie.bookmarks.each do |bookmark| %>
+            <p><%= bookmark.comment  %></p>
+             <%= link_to 'Delete', bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   <% end %>
-<% end %>
+</div>
+
+
+
+
+
+
 <br>
 <%= link_to 'Add a new bookmark',  new_list_bookmark_path(@list)  %>
 <%= link_to 'Back to lists', lists_path %>

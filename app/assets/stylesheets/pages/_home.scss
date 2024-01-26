@@ -1,1 +1,57 @@
 // Specific CSS for your home-page
+.banner-image {
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.navbar {
+  justify-content: space-between;
+  background: white;
+  flex-grow: 0;
+  height: 40px;
+}
+
+.navbar-icon {
+  height: 20px;
+  width: 20px;
+}
+
+.list-cards {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 4px;
+  align-items: center;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  width: 250px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 4px;
+}
+
+.list-navbar {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}

@@ -1,6 +1,22 @@
-<h1>Lists</h1>
-<% @lists.each do |list| %>
-  <p><%= list.name %> | <%= link_to 'Show list', list_path(list) %></p>
-<% end %>
-<br>
-<%= link_to 'Create a new list', new_list_path(@list) %>
+<div class="navbar navbar-expand-sm">
+
+</div>
+
+<div class="banner">
+  <div class="banner-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'cinema.jpg' %>)">
+    My movie library
+  </div>
+</div>
+
+<div class="list-navbar">
+  <h2>My lists</h2>
+  <%= link_to 'Create a new list', new_list_path(@list), class: 'btn btn-success' %>
+</div>
+
+<div class="list-cards">
+  <% @lists.each do |list| %>
+    <div class="card-category">
+      <p><%= link_to list.name , list_path(list) %></p>
+    </div>
+  <% end %>
+</div>
